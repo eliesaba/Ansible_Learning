@@ -81,3 +81,51 @@ We can also define varibales for repeated values :&#x20;
 &#x20;       **        `tablename:`**` ``foo`
 
 &#x20;       **        `tableowner:`**` ``someuser`
+
+&#x20;<mark style="color:blue;"></mark> <mark style="color:blue;">------------------------------------------------------------------------------------------------</mark>
+
+&#x20;In each playbook we can have multiple plays, so we can have multiple hosts having its own tasks... We can also add a name for our playbook like we have names for our tasks.
+
+**`-name:`** Multiple plays
+
+**`-hosts:`**`databases1`
+
+&#x20; **  `remoteuser:`**`root`&#x20;
+
+&#x20; **  `vars:`**
+
+&#x20;       **        `tablename:`**` ``foo`
+
+&#x20;       **        `tableowner:`**` ``someuser`
+
+&#x20; **  `tasks:`**
+
+&#x20;    `-`<mark style="color:green;">**`name`**</mark>**`:`**` ``Rename table foo to bar`
+
+&#x20;        <mark style="color:yellow;">**`postgresql_table`**</mark>**`:`**
+
+&#x20;            <mark style="color:purple;">**`table`**</mark>**`:`**` ``foo`
+
+&#x20;            <mark style="color:purple;">**`rename`**</mark>**`:`**` ``bar`
+
+**`-hosts:`**`databases2`
+
+&#x20; **  `remoteuser:`**`root`&#x20;
+
+&#x20; **  `vars:`**
+
+&#x20;       **        `tablename:`**` ``foo`
+
+&#x20;       **        `tableowner:`**` ``someuser`
+
+&#x20; **  `tasks:`**
+
+&#x20;    `-`<mark style="color:green;">**`name`**</mark>**`:`**` ``Rename table foo to bar`
+
+&#x20;        <mark style="color:yellow;">**`postgresql_table`**</mark>**`:`**
+
+&#x20;            <mark style="color:purple;">**`table`**</mark>**`:`**` ``foo`
+
+&#x20;            <mark style="color:purple;">**`rename`**</mark>**`:`**` ``bar`
+
+&#x20; <mark style="color:blue;">------------------------------------------------------------------------------------------------</mark>
